@@ -37,32 +37,42 @@ function displayMenuItems(menu) {
             listItem.textContent = item;
 
             // Attach a click event listener to the list item to add it to the order
-            listItem.addEventListener('click', () => addToOrder(item));
+            listItem.addEventListener('click', function() {
+                addToOrder(itemName);
+            });
 
             // Append the list item to the list of items
             itemsList.appendChild(listItem);
+        }
             // Add a newline character to separate the list items
-            itemsList.appendChild(document.createElement('br'));
+        itemsList.appendChild(document.createElement('br'));
             // Add a newline character to separate the categories
-            MenuContainer.appendChild(document.createElement('br'));
-            }
-        }  
-}
+        MenuContainer.appendChild(document.createElement('br'));
+    }
+}  
+
 
 
 // Callback function for adding an item to the order
 function addToOrder(itemName) {
     // Get the order items list and the order total element from the HTML
+    const orderItemsList = document.getElementById('order-items');
+    const orderTotalElement = document.getElementById('order-total');
 
     // Create a list item for the order
+    const listItem = document.createElement('li');
 
     // Set the text content of the list item to the item name
+    listItem.textContent = item;
 
     // Append the list item to the order items list
+    orderItemsList.appendChild(listItem);
 
     // Calculate and update the total price
-
-    // Update the text content of the order total element with the new total
+    const currentTotal = parseFloat(orderTotalElement.textContent);
+    const itemPrice = 60; // Assuming each item costs R60
+    const newTotal = currentTotal + itemPrice;
+    orderTotalElement.textContent = newTotal.toFixed(2);
 }
 
 // Function to initialize the menu system
