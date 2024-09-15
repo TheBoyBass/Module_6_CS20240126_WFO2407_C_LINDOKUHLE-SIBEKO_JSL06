@@ -2,7 +2,7 @@
 const menu = {
     Starters: ["Garlic Bread", "Bruschetta"],
     MainCourses: ["Margherita Pizza", "Spaghetti Carbonara"],
-    Desserts: ["Tiramisu", "Cheesecake",""]
+    Desserts: ["Tiramisu", "Cheesecake"]
 };
 
 // Function to display menu items by category
@@ -38,7 +38,7 @@ function displayMenuItems(menu) {
 
             // Attach a click event listener to the list item to add it to the order
             listItem.addEventListener('click', function() {
-                addToOrder(itemName);
+                addToOrder(itemNmae);
             });
 
             // Append the list item to the list of items
@@ -46,8 +46,6 @@ function displayMenuItems(menu) {
         }
             // Add a newline character to separate the list items
         itemsList.appendChild(document.createElement('br'));
-            // Add a newline character to separate the categories
-        MenuContainer.appendChild(document.createElement('br'));
     }
 }  
 
@@ -63,7 +61,7 @@ function addToOrder(itemName) {
     const listItem = document.createElement('li');
 
     // Set the text content of the list item to the item name
-    listItem.textContent = item;
+    listItem.textContent = itemName;
 
     // Append the list item to the order items list
     orderItemsList.appendChild(listItem);
